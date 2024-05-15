@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
 import users from './routes/users.js';
+import auth from './routes/auth.js';
 
 
 const app = express();
@@ -23,6 +24,7 @@ app.use(helmet());
 app.use(morgan("common"));
 
 app.use('.users', users);
+app.use('.auth', auth);
     
 app.listen(8800, ()=>{
     console.log(`Backend Server is running on ${PORT}`)
